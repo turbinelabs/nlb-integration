@@ -488,14 +488,14 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.14.0
             - '        ExecStart=/usr/bin/docker run --name %n -e "TBNPROXY_API_KEY='
             - !Ref TbnAccessKey
             - '" -e "TBNPROXY_API_ZONE_NAME='
             - !Ref TbnZoneName
             - '" -e "TBNPROXY_PROXY_NAME='
             - !Ref TbnProxyName
-            - '" -p 80:80 turbinelabs/tbnproxy:0.13.0'
+            - '" -p 80:80 turbinelabs/tbnproxy:0.14.0'
             - |+
 
 
@@ -612,7 +612,7 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.14.0
             - '        ExecStart=/usr/bin/docker run --name %n -e "TBNCOLLECT_API_KEY='
             - !Ref TbnAccessKey
             - '" -e "TBNCOLLECT_API_ZONE_NAME='
@@ -625,7 +625,7 @@ Resources:
             - !Ref AwsSecretAccessKey
             - '" -e "TBNCOLLECT_AWS_VPC_ID='
             - !Ref VpcId
-            - '" -e "TBNCOLLECT_CMD=aws" -p 80:80 turbinelabs/tbncollect:0.13.0'
+            - '" -e "TBNCOLLECT_CMD=aws" -p 80:80 turbinelabs/tbncollect:0.14.0'
             - |+
 
 
@@ -645,7 +645,7 @@ Resources:
           Value: 'cluster'
           PropagateAtLaunch: true
         - Key: 'version'
-          Value: '0.13.0'
+          Value: '0.14.0'
           PropagateAtLaunch: true
         - Key: 'stage'
           Value: 'prod'
@@ -748,8 +748,8 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-server:0.13.0
-                      ExecStart=/usr/bin/docker run --name %n -e 'TBN_COLOR=1B9AE4' -p 8080:8080 turbinelabs/all-in-one-server:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-server:0.14.0
+                      ExecStart=/usr/bin/docker run --name %n -e 'TBN_COLOR=1B9AE4' -p 8080:8080 turbinelabs/all-in-one-server:0.14.0
                       [Install]
                       WantedBy=multi-user.target
 
@@ -765,7 +765,7 @@ Resources:
           Value: 'cluster'
           PropagateAtLaunch: true
         - Key: 'version'
-          Value: '0.13.0'
+          Value: '0.14.0'
           PropagateAtLaunch: true
         - Key: 'stage'
           Value: 'prod'
@@ -868,8 +868,8 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-client:0.13.0
-                      ExecStart=/usr/bin/docker run --name %n -p 8080:8080 turbinelabs/all-in-one-client:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-client:0.14.0
+                      ExecStart=/usr/bin/docker run --name %n -p 8080:8080 turbinelabs/all-in-one-client:0.14.0
                       [Install]
                       WantedBy=multi-user.target
 

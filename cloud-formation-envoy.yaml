@@ -485,14 +485,14 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.14.0
             - '        ExecStart=/usr/bin/docker run --name %n -e "TBNPROXY_API_KEY='
             - !Ref TbnAccessKey
             - '" -e "TBNPROXY_API_ZONE_NAME='
             - !Ref TbnZoneName
             - '" -e "TBNPROXY_PROXY_NAME='
             - !Ref TbnProxyName
-            - '" -p 80:80 turbinelabs/tbnproxy:0.13.0'
+            - '" -p 80:80 turbinelabs/tbnproxy:0.14.0'
             - |+
 
 
@@ -609,7 +609,7 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.13.0
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.14.0
             - '        ExecStart=/usr/bin/docker run --name %n -e "TBNCOLLECT_API_KEY='
             - !Ref TbnAccessKey
             - '" -e "TBNCOLLECT_API_ZONE_NAME='
@@ -622,7 +622,7 @@ Resources:
             - !Ref AwsSecretAccessKey
             - '" -e "TBNCOLLECT_AWS_VPC_ID='
             - !Ref VpcId
-            - '" -e "TBNCOLLECT_CMD=aws" -p 80:80 turbinelabs/tbncollect:0.13.0'
+            - '" -e "TBNCOLLECT_CMD=aws" -p 80:80 turbinelabs/tbncollect:0.14.0'
             - |+
 
 

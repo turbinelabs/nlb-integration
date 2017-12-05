@@ -26,7 +26,7 @@ resource "aws_instance" "tbncollect" {
 
   tags {
     "tbncollect" = "",
-    "version" = "0.13.0"
+    "version" = "0.14.0"
   }
 
   instance_type = "${var.instance_type}"
@@ -64,8 +64,8 @@ coreos:
         Restart=always
         ExecStartPre=-/usr/bin/docker stop %n
         ExecStartPre=-/usr/bin/docker rm %n
-        ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.13.0
-        ExecStart=/usr/bin/docker run --name %n -e 'TBNCOLLECT_API_KEY=${var.tbn_access_key}' -e 'TBNCOLLECT_API_ZONE_NAME=${var.tbn_zone_name}' -e 'TBNCOLLECT_AWS_AWS_REGION=${var.aws_region}' -e 'TBNCOLLECT_AWS_AWS_ACCESS_KEY_ID=${var.AWS_ACCESS_KEY_ID}' -e 'TBNCOLLECT_AWS_AWS_SECRET_ACCESS_KEY=${var.AWS_SECRET_ACCESS_KEY}' -e 'TBNCOLLECT_AWS_VPC_ID=${aws_vpc.default.id}' -e 'TBNCOLLECT_CMD=aws' -p 80:80 turbinelabs/tbncollect:0.13.0
+        ExecStartPre=/usr/bin/docker pull turbinelabs/tbncollect:0.14.0
+        ExecStart=/usr/bin/docker run --name %n -e 'TBNCOLLECT_API_KEY=${var.tbn_access_key}' -e 'TBNCOLLECT_API_ZONE_NAME=${var.tbn_zone_name}' -e 'TBNCOLLECT_AWS_AWS_REGION=${var.aws_region}' -e 'TBNCOLLECT_AWS_AWS_ACCESS_KEY_ID=${var.AWS_ACCESS_KEY_ID}' -e 'TBNCOLLECT_AWS_AWS_SECRET_ACCESS_KEY=${var.AWS_SECRET_ACCESS_KEY}' -e 'TBNCOLLECT_AWS_VPC_ID=${aws_vpc.default.id}' -e 'TBNCOLLECT_CMD=aws' -p 80:80 turbinelabs/tbncollect:0.14.0
 
         [Install]
         WantedBy=multi-user.target

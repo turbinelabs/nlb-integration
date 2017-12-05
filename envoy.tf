@@ -78,8 +78,8 @@ coreos:
         Restart=always
         ExecStartPre=-/usr/bin/docker stop %n
         ExecStartPre=-/usr/bin/docker rm %n
-        ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.13.0
-        ExecStart=/usr/bin/docker run --name %n -e 'TBNPROXY_API_KEY=${var.tbn_access_key}' -e 'TBNPROXY_API_ZONE_NAME=${var.tbn_zone_name}' -e 'TBNPROXY_PROXY_NAME=${var.tbn_proxy_name}' -p 80:80 turbinelabs/tbnproxy:0.13.0
+        ExecStartPre=/usr/bin/docker pull turbinelabs/tbnproxy:0.14.0
+        ExecStart=/usr/bin/docker run --name %n -e 'TBNPROXY_API_KEY=${var.tbn_access_key}' -e 'TBNPROXY_API_ZONE_NAME=${var.tbn_zone_name}' -e 'TBNPROXY_PROXY_NAME=${var.tbn_proxy_name}' -p 80:80 turbinelabs/tbnproxy:0.14.0
 
         [Install]
         WantedBy=multi-user.target
