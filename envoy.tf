@@ -1,5 +1,5 @@
 /*
-Copyright 2017 Turbine Labs, Inc.
+Copyright 2018 Turbine Labs, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ coreos:
         Description=Tbnproxy Service
         After=docker.service
         Requires=docker.service
-   
+
         [Service]
         TimeoutStartSec=0
         Restart=always
@@ -103,7 +103,7 @@ resource "aws_cloudwatch_metric_alarm" "bytesalarm-out" {
   period = "60"
   statistic = "Average"
   threshold = "1000000"
-  
+
   dimensions {
     AutoScalingGroupName = "${aws_autoscaling_group.envoy.name}"
   }
@@ -130,7 +130,7 @@ resource "aws_cloudwatch_metric_alarm" "bytesalarm-in" {
   period = "60"
   statistic = "Average"
   threshold = "800000"
-  
+
   dimensions {
     AutoScalingGroupName = "${aws_autoscaling_group.envoy.name}"
   }

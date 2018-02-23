@@ -1,5 +1,5 @@
 /*
-Copyright 2017 Turbine Labs, Inc.
+Copyright 2018 Turbine Labs, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ coreos:
         Description=All-in-one client Service
         After=docker.service
         Requires=docker.service
-   
+
         [Service]
         TimeoutStartSec=0
         Restart=always
@@ -122,7 +122,7 @@ coreos:
         Description=All-in-one server Service
         After=docker.service
         Requires=docker.service
-   
+
         [Service]
         TimeoutStartSec=0
         Restart=always
