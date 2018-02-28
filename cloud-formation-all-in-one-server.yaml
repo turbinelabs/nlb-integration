@@ -472,7 +472,7 @@ Resources:
                       Restart=always
                       ExecStartPre=-/usr/bin/docker stop %n
                       ExecStartPre=-/usr/bin/docker rm %n
-                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-server:0.14.2
-                      ExecStart=/usr/bin/docker run --name %n -e 'TBN_COLOR=1B9AE4' -p 8080:8080 turbinelabs/all-in-one-server:0.14.2
+                      ExecStartPre=/usr/bin/docker pull turbinelabs/all-in-one-server:0.15.0
+                      ExecStart=/usr/bin/docker run --name %n -e 'TBN_COLOR=1B9AE4' -p 8080:8080 turbinelabs/all-in-one-server:0.15.0
                       [Install]
                       WantedBy=multi-user.target
